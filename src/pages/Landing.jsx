@@ -179,9 +179,9 @@ function Landing() {
       </section>
       
     <h1 className="credits">Made with absolute love: Rahma Rizk 💕</h1>  
+    <h1 className="credits">All icons by <a href="https://icons8.com" style={{ color: "#160662" }}>Icons8</a></h1>
     </div>
   );
-  }
+}
 
-
-  export default Landing;
+export default Landing;

@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link  , useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 function AuthCard({ type }) {
-  const normalizedType = String(type).trim().toLowerCase();
-  const isLogin = normalizedType === "login" || normalizedType === "signin" || normalizedType === "sign in";
+  const isLogin = type === "Login" ;
   const title = isLogin ? "Login" : "Signup";
 
   const [email, setEmail] = useState("");
@@ -22,7 +21,9 @@ function AuthCard({ type }) {
     setError("");
     // TODO: Add auth submission logic here
 
-    console.log(`${title} submitted`, { email, password });
+    const name = email.split("@")[0];
+    console.log(`${title} submitted`, { email, password , name});
+    navigate(`/dashboard/${encodeURIComponent(name)}`);
   };
 
   
@@ -33,6 +34,11 @@ function AuthCard({ type }) {
   const handleLogin = async () => {
     navigate(`/login`);
   }
+
+  // const handleSubmit = async () => {
+  //   handleAuth();
+  //   navigate('/dashboard');
+  // }
 
   return (
     <div className="auth-card">
@@ -56,7 +62,7 @@ function AuthCard({ type }) {
           placeholder="Enter your password"
         />
 
-        <button type="submit">{title}</button>
+        <button type="submit" onClick={handleAuth}>{title}</button>
       </form>
 
       {error && <p className="form-error">{error}</p>}
