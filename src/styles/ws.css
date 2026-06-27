@@ -123,6 +123,8 @@
     font-size: 1.1rem;
     font-family:  "Inter", sans-serif;
     letter-spacing: -0.05em;
+    position: relative;
+    overflow: hidden;
 }
 
 .section-name{
@@ -146,6 +148,8 @@
     letter-spacing: -0.05em;
     padding-left: 20px ;
 }
+
+
 
 .description{
     color: #9699b8;
@@ -207,4 +211,175 @@
     display: block;
 }
 
+.learning-list{
+    padding-bottom: 10px;
+}
 
+.learning-list p{
+    padding-left: 50px;
+    padding-bottom: 20px;
+    margin: -10px;
+
+}
+
+
+
+
+.checklist-container{
+    
+    justify-items: left;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+
+}
+
+.checklist-container h2{
+    font-weight: 600;
+    font-size: 1rem;
+    font-family:  "Inter" , sans-serif;
+    letter-spacing: -0.02em;
+    display:flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+
+    color: white;
+    gap:1rem;
+    cursor: pointer;
+    width: 100%;
+    align-items: center;
+    
+}
+
+ 
+
+.checklist-container h2 input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.checklist-container h2 input:hover {
+    border-color: #28dfef;
+}
+
+.checklist-container h2 input:checked {
+    border-color: transparent;
+    background: linear-gradient(135deg, #28dfef 0%, #a06bff 60%, #ff5fd1 100%);
+    box-shadow: 0 0 14px rgba(160, 107, 255, 0.6);
+}
+
+.checklist-container h2 input:checked::after {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.checklist-container h2 input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(40, 223, 239, 0.35);
+}
+
+.checklist-container h2:has(input:checked) {
+    text-decoration: line-through;
+    color: #8ca0c2;
+}
+
+.ws-buttons{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+
+
+.ws-buttons button{
+    width: 200px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    padding: 12px 22px;
+    font-family:  "Inter", sans-serif;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #cdd2ef;
+    background: linear-gradient(to right,#09506f 0%, #381479 50%, #6f1255 100%);
+
+}
+
+
+.ws-buttons button:hover  {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px #8db0e8b5;
+}
+
+.locked{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(7, 14, 30, 0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 24px; */
+    text-align: center;
+    z-index: 2;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.locked::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.75rem;
+    background-image: url("/icon23.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.locked::after {
+    content: "Unlocks when your project is complete\A Finish the implementation and deployment checklists to generate your README and unlock optional career materials.";
+    white-space: pre-line;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #f2f5ff;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    padding-right: 30px;
+}

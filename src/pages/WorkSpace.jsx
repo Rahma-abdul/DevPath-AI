@@ -1,5 +1,7 @@
 import "../styles/ws.css";
 import { useState } from "react";
+import DashboardFlow from "../components/dashboardFlow";
+
 
 
 function Workspace(){
@@ -73,6 +75,67 @@ function Workspace(){
                         </div>
                         
                     </div>
+                    <h1 className="section-name">Roadmap</h1>
+                    <div className="ws-layout">
+                    <DashboardFlow/>
+                    </div>
+                    <h1 className="section-name">Learning Resources</h1>
+                    <div className="ws-layout">
+                    <h2>Video Tutorials</h2>
+                    <div className="learning-list">
+                            <p>Video1</p>
+                            <p>Video2</p>
+                            <p>Video3</p>
+                    </div>
+                    <h2>Documentation</h2>
+                    <div className="learning-list">
+                            <p>Doc1</p>
+                            <p>Doc2</p>
+                            <p>Doc3</p>
+                    </div>
+                    <h2>Articles</h2>
+                    <div className="learning-list">
+                            <p>Paper1</p>
+                            <p>Paper2</p>
+                            <p>Paper3</p>
+                    </div>
+                    </div>
+                    <h1 className="section-name">Checklist</h1>
+                    <div className="ws-layout">
+                    <h2>Learning Topics</h2>
+                    <div className="checklist-container">
+                        <h2><input type="checkbox"/>REST API Fundamentals</h2>
+                        <h2><input type="checkbox"/>Authentication & JWT</h2>
+                        <h2><input type="checkbox"/>Natural Language Basics (NLP) Basics</h2>
+                        <h2><input type="checkbox"/>Serverless Deployment Patterns</h2>
+                    </div>
+                    <h2>Implementation Tasks</h2>
+                    <div className="checklist-container">
+                        <h2><input type="checkbox"/>Setup project repo and CI</h2>
+                        <h2><input type="checkbox"/>Build authentication flow</h2>
+                        <h2><input type="checkbox"/>Resume upload endpoint</h2>
+                        <h2><input type="checkbox"/>Implement parsing logic</h2>
+                        <h2><input type="checkbox"/>Build ranking engine</h2>
+                        <h2><input type="checkbox"/>Dashboard UI</h2>
+                        <h2><input type="checkbox"/>Notifications System</h2>
+                        <h2><input type="checkbox"/>Database migrations</h2>                        
+                    </div>
+                    
+                    </div>
+
+                    <h1 className="section-name">Documentation</h1>
+                    <div className="ws-layout">
+                        
+                        <div className="ws-buttons">
+                            <button>Generate Readme</button>
+                            <button>Generate CV Bullets</button>
+                            <button>Interview Prep</button>
+                            <button>Q&A</button>
+                        </div>
+                        <div className="locked"></div>
+                        
+                    </div>
+                    
 
                 </div>
           
@@ -91,6 +154,5 @@ export default Workspace;
 // 5) Learning Resources --> Video tutorials / Documentation / Articles
 // 6) Checklist --> Implenetation tasks / Learning topic names only
 // 7) Mentor Icon 
-// 8) Deployment Checklist 
-// 9) Documentation --> Readme / CV Bullets / Interview prep / Q&A
+// 8) Documentation --> Readme / CV Bullets / Interview prep / Q&A
 
