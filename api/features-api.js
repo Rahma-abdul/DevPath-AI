@@ -56,6 +56,7 @@ export default async function handler(req ,res){
             model:"gemini-2.5-flash" ,
             contents: prompt
         });
+        
 
         const text = response.text.replace(/```json/g,"").replace(/```/g,"").trim();
 
